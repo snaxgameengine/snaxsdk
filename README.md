@@ -125,7 +125,7 @@ of chip you derive from. You can also create your own type hierarchy by deriving
 - Copy the resulting DLL-files for the chips and the optional dialogs to the Chips\\ and Dialogs\\ directories in the SnaX install directory, typically "C:\\Program Files\\SnaX\\".
 - Start SnaX Developer. Your new chips should be visible in the list of available chips. 
 
-> TIP: You can run SnaXDeveloper.exe from Visual Studio to debug your code!
+__TIP__: You can run SnaXDeveloper.exe from Visual Studio to debug your code!
 
 ## Running the example-project
 The _Examples_ folder contains a project that can be opened in Visual Studio 2015-2019.
@@ -133,6 +133,7 @@ You should be able to build and run the project by pressing F5 in Visual Studio.
 This assumes that SnaX is installed to "C:\\Program Files\\SnaX\\" as there are predefined
 paths in the project to copy the new DLL-files to the correct directories, and to run SnaXDeveloper.exe. 
 
-> Important! You will need to give write permission for the current user to the _Chips_ and _Dialogs_ directories in the SnaX install directory for Visual Studio to be able to automatically copy the new DLL-files to those directories!
+__IMPORTANT: You have to give the current user _write access_ to the _3rd_, _Chips_ and _Dialogs_ folders in the
+SnaX installation directory. If not, Visual Studio will not be able to automatically copy the new files.__
 
 For a more complete example for how to use the SDK, please have a look at the [PhysXForSnaX](https://github.com/snaxgameengine/PhysXForSnaX) repository!
