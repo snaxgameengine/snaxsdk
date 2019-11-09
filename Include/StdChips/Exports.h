@@ -27,7 +27,7 @@
 
 
 
-#ifdef STDCHIPS_EXPORTS
+#ifdef StdChips_EXPORTS
 #define STDCHIPS_API __declspec(dllexport)
 #else
 #define STDCHIPS_API __declspec(dllimport)

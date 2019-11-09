@@ -27,7 +27,7 @@
 
 
 
-#ifdef M3DENGINE_EXPORTS
+#ifdef M3DEngine_EXPORTS
 #define M3DENGINE_API __declspec(dllexport)
 #else
 #define M3DENGINE_API __declspec(dllimport)

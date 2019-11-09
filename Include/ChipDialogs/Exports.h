@@ -26,7 +26,7 @@
 #ifndef CHIPDIALOGS_GLOBAL_H
 #define CHIPDIALOGS_GLOBAL_H
 
-#ifdef CHIPDIALOGS_LIB
+#ifdef ChipDialogs_EXPORTS
 # define CHIPDIALOGS_EXPORT __declspec(dllexport)
 #else
 # define CHIPDIALOGS_EXPORT __declspec(dllimport)

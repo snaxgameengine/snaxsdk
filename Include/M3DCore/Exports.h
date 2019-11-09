@@ -27,7 +27,7 @@
 
 
 
-#ifdef M3DCORE_EXPORTS
+#ifdef M3DCore_EXPORTS
 #define M3DCORE_API __declspec(dllexport)
 #else
 #define M3DCORE_API __declspec(dllimport)

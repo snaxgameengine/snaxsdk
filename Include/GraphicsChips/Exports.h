@@ -26,7 +26,7 @@
 #pragma once
 
 
-#ifdef GRAPHICSCHIPS_EXPORTS
+#ifdef GraphicsChips_EXPORTS
 #define GRAPHICSCHIPS_API __declspec(dllexport)
 #else
 #define GRAPHICSCHIPS_API __declspec(dllimport)

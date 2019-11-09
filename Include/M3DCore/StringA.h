@@ -28,6 +28,7 @@
 #include "Exports.h"
 #include "MLocale.h"
 #include <atomic>
+#include <Windows.h>
 
 namespace m3d
 {
