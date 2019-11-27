@@ -699,7 +699,7 @@ bool operator!=(const Map<T, S, multimap, CMP>& a, const Map<T, S, multimap, CMP
 		return true;
 
 	for (Map<T, S, multimap, CMP>::cNode n = a.front(), m = b.front(); n.valid() && m.valid(); n++, m++)
-		if (!(n.get() != m.get()))
+		if (n.get() != m.get())
 			return true;
 	return false;
 }

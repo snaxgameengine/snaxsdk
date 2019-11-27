@@ -157,7 +157,7 @@ public:
 
 	// Get/Set the class this chip belongs to.
 	Class *GetClass() const { return _clazz; }
-	void SetClass(Class *clazz) { _clazz = clazz; }
+	virtual void SetClass(Class* clazz); // This can be overridden in classes that hold instances.
 
 	// Get/Set the owner of this chip.
 	Chip *GetOwner() const { return _owner; }

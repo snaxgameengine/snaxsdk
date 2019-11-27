@@ -1334,7 +1334,7 @@ bool operator!=(const Set<T, multiset, CMP>& a, const Set<T, multiset, CMP>& b)
 		return true;
 
 	for (Set<T, multiset, CMP>::cNode n = a.front(), m = b.front(); n.valid() && m.valid(); n++, m++)
-		if (!(n.get() != m.get()))
+		if (n.get() != m.get())
 			return true;
 	return false;
 }
