@@ -35,7 +35,7 @@ namespace m3d
 static const GUID STDGEOMETRY_GUID = { 0x402a1e54, 0x5b7e, 0x4bf5, { 0xa4, 0xd6, 0x65, 0xd7, 0x29, 0xfe, 0x70, 0x43 } };
 
 
-class GRAPHICSCHIPS_API StdGeometry : public Geometry
+class GRAPHICSCHIPS_API StdGeometry : virtual public Geometry
 {
 	CHIPMSG(MSG_NO_SUBSETS, WARN, L"No subsets!")
 	CHIPMSG(MSG_NO_POSITIONS, WARN, L"No position data!")
