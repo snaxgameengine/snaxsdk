@@ -129,9 +129,9 @@ public:
 		list._size = 0;
 	}
 
-	List(const std::initializer_list<T> &v)
+	List(const std::initializer_list<T> &v) : _t(nullptr), _capacity(0), _size(0)
 	{
-		reserve(v.size());
+		_reserve(v.size());
 		for (auto itr = v.begin(); itr != v.end(); itr++)
 			push_back(*itr);
 	}

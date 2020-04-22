@@ -53,12 +53,12 @@ namespace m3d
 #endif
 #else
 #ifndef V
-#define V(x)           { hr = x; if( FAILED(hr) ) { m3d::Trace( __FILE__, (unsigned long)__LINE__, hr, L#x, 0 ); } }
+#define V(x)           { hr = x; if( FAILED(hr) ) { m3d::Trace( __FILE__, (unsigned long)__LINE__, hr, nullptr, 0 ); } }
 #endif
 #ifndef V_RETURN
-#define V_RETURN(x)    { hr = x; if( FAILED(hr) ) { return m3d::Trace( __FILE__, (unsigned long)__LINE__, hr, L#x, 0 ); } }
+#define V_RETURN(x)    { hr = x; if( FAILED(hr) ) { return m3d::Trace( __FILE__, (unsigned long)__LINE__, hr, nullptr, 0 ); } }
 #ifndef B_RETURN
-#define B_RETURN(x)	   { if ( !(x) ) { return m3d::Trace( __FILE__, (unsigned long)__LINE__, false, L#x, 0 ); } }
+#define B_RETURN(x)	   { if ( !(x) ) { return m3d::Trace( __FILE__, (unsigned long)__LINE__, false, nullptr, 0 ); } }
 #endif
 #endif
 #endif

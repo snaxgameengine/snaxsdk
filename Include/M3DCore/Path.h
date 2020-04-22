@@ -96,13 +96,15 @@ public:
 	bool CompareFileExtention(String ext) const;
 	// Returns a new path with a new file extension.
 	Path ChangeFileExtention(String ext) const;
+	// Returns a new path with a new file base name.
+	Path ChangeBaseName(String baseName) const;
 	// Check if the path does not contain any special characters like |*?<>:\"
 	bool ContainsValidCharactersOnly() const;
 
 	// These functions operates on the file system.
 	bool Copy(Path newPath, bool failIfExists = true) const;
 	bool Move(Path newPath) const;
-	bool CreateDir() const;
+	bool CreateDir(bool recursive = false) const;
 	bool CheckExistence() const;
 	bool Delete() const;
 
