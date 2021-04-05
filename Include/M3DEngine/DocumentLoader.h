@@ -58,10 +58,21 @@ struct LoadDataT<T*>
 class ClassFactory;
 class DataBuffer;
 
+struct FunctionMeta
+{
+	GUID type;
+	String name;
+	Function::Type ft;
+	Function::Access fa;
+	String comment;
+};
+
 struct ClassMeta
 {
 	String name;
 	bool hasStartchip;
+	String description;
+	List<FunctionMeta> functions;
 };
 
 typedef List<ClassMeta> ClassMetaList;
@@ -94,7 +105,13 @@ struct LMsg
 typedef Map<GUID, ChipID> ChipIDByGUIDMap;
 template class M3DENGINE_API Map<GUID, ChipID>;
 
-typedef Map<std::pair<unsigned, unsigned>, GUID> ConnectionMap;
+struct LoadedConnection
+{
+	GUID guid;
+	bool isMulticonnection;
+};
+
+typedef Map<std::pair<unsigned, unsigned>, LoadedConnection> ConnectionMap;
 template class M3DENGINE_API Map<std::pair<unsigned, unsigned>, GUID>;
 
 typedef Map<ChipID, ConnectionMap> ConnectionMapByChipIDMap;
@@ -184,11 +201,13 @@ public:
 	// The level of encryption.
 	DocumentEncryptionLevel GetEncryptionLevel() const { return _encLevel; }
 
+	class Environment* GetEnvironment() const;
+
 	Version GetDocumentVersion() const { return _version; }
 	Version GetChipTypeVersion(const GUID &type) const;
 
 	// Searches for classes and return a list of clazz-names.
-	bool SearchForClasss(ClassMetaList& clazzNames);
+	bool SearchForClasses(ClassMetaList& classList, bool includeFunctions);
 	// Load chips classes into the given document. 
 	bool LoadDocument(Document *doc);
 	// Load a class into the given document. *clazz is the loaded class. Can be null if no more found.

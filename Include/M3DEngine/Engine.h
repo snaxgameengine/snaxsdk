@@ -37,6 +37,7 @@ class HighPrecisionTimer;
 class FPS;
 struct ChipMessage;
 struct EngineImpl;
+class Environment;
 
 enum EditMode { EM_RUN, EM_EDIT_RUN, EM_EDIT };
 
@@ -54,7 +55,7 @@ public:
 	static void Destroy();
 
 	// Initiates the system. Searches for chips, sets up graphics engine etc.
-	bool Init(Application *application, Path chipDir, Path thirdDir);
+	bool Init(Application *application, Path chipDir, Path thirdDir, const List<Path> &libDirs);
 	// Resets the engine. Makes it ready to load a new project.
 	void Reset();
 	// Clears the engine. Calls Reset() and destroys graphics. Must be called before Application is destroyed!
@@ -72,6 +73,8 @@ public:
 	ClassManager* GetClassManager();
 	// Returns the manager keeping track of function signatures.
 	FunctionSignatureManager* GetFunctionSignatureManager();
+	// Returns the environment.
+	Environment* GetEnvironment();
 
 	// Sets the file to write debug messages to.
 	void SetMessageFile(Path p);
@@ -109,6 +112,8 @@ public:
 	// Called when program execution is to be paused (eg for break points)
 	void Break(Chip *chip);
 	bool IsBreakMode() const;
+	// Returns true if Run() is called, but not yet returned.
+	bool IsRunning() const;
 
 	// The directory where 3rd-party dependencies are found
 	Path GetThirdDepsDirectory() const;

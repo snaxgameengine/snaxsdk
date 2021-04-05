@@ -71,9 +71,9 @@ extern const ChipDesc &RegisterChipDesc(const wchar_t *name, GUID type, GUID bas
 struct ChildConnectionDesc
 {
 	enum DataDirection { UP=-1, BOTH, DOWN};
-
+	enum ConnectionType { SINGLE, GROWING, MULTI };
 	GUID type;
-	bool growing;
+	ConnectionType connType;
 	DataDirection dataDirection;
 	String name;
 };
@@ -107,8 +107,8 @@ typedef List<ChildConnection*> ChildConnectionList;
 template class M3DENGINE_API List<ChildConnection*>;
 
 
-#define CREATE_CHILD(index, type, growing, dataDirection, name) { m3d::ChildConnectionDesc desc = {type, growing, m3d::ChildConnectionDesc::dataDirection, name}; SetConnection(index, desc, false); }
-#define CREATE_CHILD_KEEP(index, type, growing, dataDirection, name) { m3d::ChildConnectionDesc desc = {type, growing, m3d::ChildConnectionDesc::dataDirection, name}; SetConnection(index, desc, true); }
+#define CREATE_CHILD(index, type, growing, dataDirection, name) { m3d::ChildConnectionDesc desc = {type, (growing ? m3d::ChildConnectionDesc::GROWING : m3d::ChildConnectionDesc::SINGLE), m3d::ChildConnectionDesc::dataDirection, name}; SetConnection(index, desc, false); }
+#define CREATE_CHILD_KEEP(index, type, growing, dataDirection, name) { m3d::ChildConnectionDesc desc = {type, (growing ? m3d::ChildConnectionDesc::GROWING : m3d::ChildConnectionDesc::SINGLE), m3d::ChildConnectionDesc::dataDirection, name}; SetConnection(index, desc, true); }
 
 struct ChipExceptionScope
 {

@@ -243,6 +243,10 @@ public:
 	virtual void CallChip() {}
 	virtual ChipChildPtr GetChip();
 
+
+	virtual unsigned GetMultiConnectionChildCount() const { return 1; }
+	virtual ChipChildPtr GetMultiConnectionChip(unsigned subIndex) { return subIndex == 0 ? GetChip() : nullptr; }
+
 	virtual void Run();
 
 	virtual Chip *FindChip(ChipID chipID) { return _id == chipID ? this : nullptr; }

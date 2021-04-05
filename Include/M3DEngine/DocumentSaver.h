@@ -118,6 +118,8 @@ public:
 	void SetCompressionLevel(DocumentCompressionLevel cl) { _compression = cl; }
 	DocumentCompressionLevel GetCompressionLevel() const { return _compression; }
 
+	class Environment *GetEnvironment() const;
+
 	// true if this is a temporary saver run in a worker thread for saving one single chip only.
 	bool IsChipSaver() const { return _chipSaver; }
 

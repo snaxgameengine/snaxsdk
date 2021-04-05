@@ -36,7 +36,10 @@
 namespace m3d
 {
 
-static const Version DocumentVersion = Version(1,2,2,0); // Standardized 'Class' names
+static const Version DocumentVersion = Version(1, 2, 5, 0); // Fixed bug where tag 'Description' was written as 'Publish'
+//static const Version DocumentVersion = Version(1, 2, 4, 0); // Added multiconnections
+//static const Version DocumentVersion = Version(1, 2, 3, 0); // Added class description
+//static const Version DocumentVersion = Version(1,2,2,0); // Standardized 'Class' names
 //static const Version DocumentVersion = Version(1,2,1,0); // Added autoload for some chips
 //static const Version DocumentVersion = Version(1,2,0,0); // Added <PublishProfiles>
 //static const Version DocumentVersion = Version(1,1,0,1);

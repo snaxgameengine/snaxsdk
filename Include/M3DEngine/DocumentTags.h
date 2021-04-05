@@ -60,8 +60,8 @@ namespace DocumentTags
 		Comment,
 		Instances,
 		Instance,
-		Publish, // TODO: Remove! (Still used for backward comp.)
-		File, // TODO: Remove! (Still used for backward comp.)
+		Description_old,
+		Description,
 		Rect,
 		Image,
 		Text,
@@ -85,13 +85,8 @@ namespace DocumentTags
 		refreshmode,
 		filename,
 		extent,
-		title,// TODO: Remove! (Still used for backward comp.)
-		target,// TODO: Remove!
-		filters,// TODO: Remove!
-		compression,// TODO: Remove!
-		copyproject,// TODO: Remove!
-		includeall,// TODO: Remove!
-		sx,
+		multiconnection,
+		sx = multiconnection + 6, // Skipping elementes that were removed...
 		sy,
 		color,
 		textSize,
@@ -122,7 +117,7 @@ namespace DocumentTags
 		"Instances",
 		"Instance",
 		"Publish",
-		"File",
+		"Description",
 		"Rect",
 		"Image",
 		"Text",
@@ -147,7 +142,7 @@ namespace DocumentTags
 		"refreshmode",
 		"filename",
 		"extent",
-		"title",
+		"multiconnection",
 		"target",
 		"filters",
 		"compression",
